@@ -10,7 +10,8 @@ Clone the project
 ```
 Go to the project directory
 ```bash
-  cd Task7
+  cd Task7/ backend
+  cd Task7/frontend/TASK7-TODO-LIST
 ```
 Install dependencies
 ```bash
