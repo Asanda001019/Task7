@@ -1,0 +1,76 @@
+.login-comtainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+ 
+}
+
+.login-form{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+/* border: 1px solid #960d0d; */
+border-radius: 10px;
+box-shadow: 10px 10px 10px 10px rgb(20, 20, 20);
+width: 400px;
+height: 400px;
+margin-left: 500px;
+margin-top: 150px;
+background-color:bisque;
+}
+
+
+
+.register-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  /* border: 1px solid #960d0d; */
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 10px rgb(20, 20, 20);
+  width: 400px;
+  height: 500px;
+  margin-left: 500px;
+  margin-top: 150px;
+  background-color:rgb(218, 205, 190);
+  }
+
+.heading{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input{
+  height: 20px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.login{
+  height: 30px;
+  width: 100px;
+  background-color: bisque;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px rgb(182, 106, 5);
+  border: none;
+}
+label{
+  font-family: 'Courier New', Courier, monospace;
+  margin-left: 120px;
+}
+
+
+.login-container{
+  background-image: url("/src/assets/backF.jpg");
+  /* background-size: cover; */
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-position: center;
+  overflow: hidden;
+  
+}
+
