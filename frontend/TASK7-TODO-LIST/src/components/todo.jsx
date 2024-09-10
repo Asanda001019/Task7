@@ -58,7 +58,20 @@ function TodoPage() {
   };
 
   return (
-    <div className='todo'>
+      <div className='todo'>
+    <div style={{
+     
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      alignItems: "center",
+      borderRadius: "10px",
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 5)',
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "100%",
+      
+      overflowY: "auto",
+    }}>
       {/* <h1>Todo Page</h1> */}
       <form className='todo-form'>
         <label>
@@ -130,6 +143,7 @@ function TodoPage() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

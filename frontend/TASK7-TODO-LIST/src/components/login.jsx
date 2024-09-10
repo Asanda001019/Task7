@@ -38,7 +38,7 @@ console.log(UserName, PassWord)
         <br></br>
 
        
-        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => todo("/todo")}>Register</button>
+        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => todo("/todo")}>Login</button>
         <br></br>
         
         <p>Don't have an account? <Link to="/register">Register here</Link></p>
