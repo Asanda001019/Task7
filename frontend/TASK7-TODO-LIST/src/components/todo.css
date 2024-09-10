@@ -196,3 +196,16 @@
 .priority-hard {
   color: red; /* Yellow color for 'hard' priority */
 }
+
+
+.back-btn {
+  background-color: #000200;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 200px;
+  right: 0;
+}

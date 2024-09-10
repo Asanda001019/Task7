@@ -58,6 +58,8 @@ function TodoPage() {
   };
 
   return (
+
+    
       <div className='todo'>
     <div style={{
      
@@ -72,6 +74,13 @@ function TodoPage() {
       
       overflowY: "auto",
     }}>
+
+
+
+<button className='back-btn' onClick={() => window.location.href = '/'}>
+          Back to Landing Page
+        </button>
+
       {/* <h1>Todo Page</h1> */}
       <form className='todo-form'>
         <label>
