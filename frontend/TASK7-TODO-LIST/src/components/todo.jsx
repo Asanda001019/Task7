@@ -87,7 +87,9 @@ function TodoPage() {
           <div key={task.id} className="task-card">
             <h2>{task.title}</h2>
             <p>{task.description}</p>
-            <p>Priority: {task.priority}</p>
+
+            <p className={`priority-${task.priority}`}>Priority: {task.priority}</p> 
+
             <button className='edit-btn' onClick={() => setEditingTask({ ...task })}>Edit</button>
             <button className='delete-btn' onClick={() => handleDeleteTask(task.id)}>Delete</button>
             {editingTask && editingTask.id === task.id && (

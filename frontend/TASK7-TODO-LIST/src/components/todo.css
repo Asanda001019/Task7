@@ -108,9 +108,9 @@ body{
   margin-left: 200px;
 }
 
-.todo-form button[type="submit"]:hover {
+/* .todo-form button[type="submit"]:hover {
   background-color:#af4c82;
-}
+} */
 
 
 
@@ -188,4 +188,16 @@ body{
 
 .task-card button[type="submit"]:hover {
   background-color: #3e8e41;
+}
+
+.priority-easy {
+  color: orange; /* Red color for 'easy' priority */
+}
+
+.priority-medium {
+  color: green; /* Green color for 'medium' priority */
+}
+
+.priority-hard {
+  color: red; /* Yellow color for 'hard' priority */
 }
