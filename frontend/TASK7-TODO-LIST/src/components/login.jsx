@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import { useState } from 'react'
 import "./login/signUp.css"
 
@@ -7,6 +7,7 @@ function Login (){
 const [UserName, setUserName] =useState("");
 const [PassWord, setPassWord] =useState("");
 // const navigate = useNavigate;
+const todo = useNavigate();
 
 const handleSubmit =(e)=>{e.preventDefault()}
 
@@ -36,7 +37,8 @@ console.log(UserName, PassWord)
         <br></br>
         <br></br>
 
-        <button className='login' type='submit'>Login</button>
+       
+        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => todo("/todo")}>Register</button>
         <br></br>
         
         <p>Don't have an account? <Link to="/register">Register here</Link></p>

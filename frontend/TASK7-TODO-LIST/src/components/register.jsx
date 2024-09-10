@@ -8,6 +8,8 @@ const [SurName, setSurName] =useState("");
 const [UserName, setUserName] =useState("");
 const [PassWord, setPassWord] =useState("");
 
+const login = useNavigate();
+
 const handleSubmit =(e)=>{e.preventDefault()}
 
 console.log(UserName, PassWord)
@@ -36,7 +38,7 @@ console.log(UserName, PassWord)
         <label>
           UserName: 
           <input type='text'
-          value={UserName} onChange={(e)=>setUserName(e.target.value)}placeholder='asanda1019@gmail.com'/>
+          value={UserName} onChange={(e)=>setUserName(e.target.value)}placeholder='Username@gmail.com'/>
         </label>
         <br></br>
 
@@ -47,7 +49,12 @@ console.log(UserName, PassWord)
         </label>
         <br></br>
 
-        <button className='login'type='submit'>Register</button>
+        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => {
+         alert("You have successfully registered!");
+         login("/login");
+        }}>Register</button>
+
+        
         <br></br>
         <p>Already have an account? <Link to="/login">Login here</Link></p>
 
