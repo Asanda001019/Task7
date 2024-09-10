@@ -24,7 +24,7 @@ console.log(UserName, PassWord)
         <label>
           UserName: 
           <input type='text'
-          value={UserName} onChange={(e)=>setUserName(e.target.value)} placeholder='Asanda19@gmail.com'/>
+          value={UserName} onChange={(e)=>setUserName(e.target.value)} placeholder='Username@gmail.com'/>
         </label>
         <br></br>
         <br></br>
