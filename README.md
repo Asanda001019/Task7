@@ -11,17 +11,23 @@ Clone the project
 ```
 Go to the project directory
 ```bash
-  cd Task7/ backend
+  cd Task7/backend
   cd Task7/frontend/TASK7-TODO-LIST
 ```
 Install dependencies
 ```bash
-  npm install
+npm install axios
+ npm install express
+ npm install cors
+ npm install morgan
+ npm install better sqlite3
+ npm install nodemon
 ```
 Start the react server
 ```bash
-  npm run dev
+npm run dev
 nodemon server.js
 ```
 ## Tech Stack
 **Client:** React JS, HTML5, JavaScript, CSS3
+**Server:** Express ,sqlite3 ,cors
