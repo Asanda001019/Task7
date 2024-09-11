@@ -174,16 +174,16 @@
 .task-card button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: black;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.task-card button[type="submit"]:hover {
+/* .task-card button[type="submit"]:hover {
   background-color: #3e8e41;
-}
+} */
 
 .priority-easy {
   color: orange; /* Red color for 'easy' priority */
