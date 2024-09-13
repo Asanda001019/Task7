@@ -1,54 +1,74 @@
-import {Link, useNavigate} from "react-router-dom"
-import { useState } from 'react'
-import "./login/signUp.css"
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios for making HTTP requests
+import "./login/signUp.css";
 
-function Login (){
+function Login() {
+  const [UserName, setUserName] = useState("");
+  const [PassWord, setPassWord] = useState("");
+  const [error, setError] = useState(null); // State to hold error messages
 
-const [UserName, setUserName] =useState("");
-const [PassWord, setPassWord] =useState("");
-// const navigate = useNavigate;
-const todo = useNavigate();
+  const navigate = useNavigate();
 
-const handleSubmit =(e)=>{e.preventDefault()}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Check if the username exists
+      const userCheck = await axios.get(`http://localhost:3001/login/${UserName}`);
+      
+      if (userCheck.data.exists) {
+        // Send a POST request to the server for login
+        const response = await axios.post('http://localhost:3001/login', {
+          username: UserName,
+          password: PassWord
+        });
 
-console.log(UserName, PassWord)
+        if (response.status === 200) {
+          // Login successful, navigate to the todo page
+          navigate("/todo");
+        } else {
+          setError(response.data.error || 'An error occurred');
+        }
+      } else {
+        setError('Username does not exist');
+      }
+    } catch (error) {
+      setError(error.response?.data?.error || error.message || 'An error occurred');
+    }
+  };
 
   return (
-    <>
     <div className="backf">
       <div className='login-container'>
         <form className='login-form' onSubmit={handleSubmit}>
+          <h1 className='heading'>Please Login</h1>
 
-        <h1 className='heading'>Please Login</h1>
+          <label>
+            UserName: 
+            <input type='text'
+              value={UserName} onChange={(e) => setUserName(e.target.value)} placeholder='Username' />
+          </label>
+          <br />
+          <br />
 
-        <label>
-          UserName: 
-          <input type='text'
-          value={UserName} onChange={(e)=>setUserName(e.target.value)} placeholder='Username@gmail.com'/>
-        </label>
-        <br></br>
-        <br></br>
+          <label>
+            PassWord: 
+            <input type='password'
+              value={PassWord} onChange={(e) => setPassWord(e.target.value)} />
+          </label>
+          <br />
+          <br />
 
-        <label>
-          PassWord: 
-          <input type='password'
-          value={PassWord} onChange={(e)=>setPassWord(e.target.value)}/>
-        </label>
-        <br></br>
-        <br></br>
+          {error && <div style={{ color: 'red' }}>{error}</div>} {/* Display error messages */}
 
-       
-        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => todo("/todo")}>Login</button>
-        <br></br>
-        
-        <p>Don't have an account? <Link to="/register">Register here</Link></p>
-
+          <button style={{ backgroundColor: 'grey', color: 'white' }} type="submit">Login</button>
+          <br />
+          
+          <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </form>
       </div>
-      </div>
-
-    </>
-  )
+    </div>
+  );
 }
 
-export default Login
+export default Login;

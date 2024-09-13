@@ -1,68 +1,88 @@
-import { useState } from 'react'
-import {Link, useNavigate} from "react-router-dom"
+import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
-function Register  (){
+function Register() {
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");  // Add email state
+  const [error, setError] = useState(null);
 
-const [Name, setName] =useState("");
-const [SurName, setSurName] =useState("");
-const [UserName, setUserName] =useState("");
-const [PassWord, setPassWord] =useState("");
+  const navigate = useNavigate();
 
-const login = useNavigate();
-
-const handleSubmit =(e)=>{e.preventDefault()}
-
-console.log(UserName, PassWord)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Send a POST request to the server to register the user
+      const response = await axios.post('http://localhost:3001/register', {
+        name,
+        surname,
+        username,
+        password,
+        email  // Include email in the request
+      });
+      // Check for successful registration
+      if (response.status === 200) {
+        navigate("/login");
+      } else {
+        setError(response.data.error || 'An error occurred');
+      }
+    } catch (error) {
+      setError(error.response?.data?.error || error.message || 'An error occurred');
+    }
+  };
 
   return (
-    <>
-      <div className='login-container'>
-        <form className='register-form' onSubmit={handleSubmit}>
-
+    <div className='login-container'>
+      <form className='register-form' onSubmit={handleSubmit}>
         <h1 className='heading'>Please Register</h1>
 
         <label>
           FirstName: 
           <input type='text'
-          value={Name} onChange={(e)=>setName(e.target.value)}/>
+            value={name} onChange={(e) => setName(e.target.value)} />
         </label>
-        <br></br>
+        <br />
 
         <label>
           SurName: 
           <input type='text'
-          value={SurName} onChange={(e)=>setSurName(e.target.value)}/>
+            value={surname} onChange={(e) => setSurname(e.target.value)} />
         </label>
-        <br></br>
+        <br />
 
         <label>
           UserName: 
           <input type='text'
-          value={UserName} onChange={(e)=>setUserName(e.target.value)}placeholder='Username@gmail.com'/>
+            value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Username' />
         </label>
-        <br></br>
+        <br />
+
+        <label>
+          Email: 
+          <input type='email'
+            value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
+        </label>
+        <br />
 
         <label>
           PassWord: 
           <input type='password'
-          value={PassWord} onChange={(e)=>setPassWord(e.target.value)}/>
+            value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-        <br></br>
+        <br />
 
-        <button style={{ backgroundColor: 'grey', color: 'white' }} onClick={() => {
-         alert("You have successfully registered!");
-         login("/login");
-        }}>Register</button>
+        {error && <div style={{ color: 'red' }}>{error}</div>}
 
-        
-        <br></br>
+        <button style={{ backgroundColor: 'grey', color: 'white' }} type="submit">Register</button>
+
+        <br />
         <p>Already have an account? <Link to="/login">Login here</Link></p>
-
-        </form>
-      </div>
-
-    </>
-  )
+      </form>
+    </div>
+  );
 }
 
-export default Register
+export default Register;
