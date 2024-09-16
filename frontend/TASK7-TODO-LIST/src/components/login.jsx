@@ -67,6 +67,9 @@ function Login() {
           <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </form>
       </div>
+      <div className='footer'>
+          <p>&copy; 2023 Asanda Madondo. TodoMaster. All rights reserved.</p>
+        </div>
     </div>
   );
 }

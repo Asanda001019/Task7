@@ -61,9 +61,9 @@ function Register() {
         <br />
 
         <label>
-          Email: 
+          Email:
           <input type='email'
-            value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
+            value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Username@gmail' />
         </label>
         <br />
 
@@ -81,6 +81,9 @@ function Register() {
         <br />
         <p>Already have an account? <Link to="/login">Login here</Link></p>
       </form>
+      <div className='footer'>
+          <p>&copy; 2023 Asanda Madondo. TodoMaster. All rights reserved.</p>
+        </div>
     </div>
   );
 }
