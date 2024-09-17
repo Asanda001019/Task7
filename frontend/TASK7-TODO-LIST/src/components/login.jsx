@@ -54,7 +54,7 @@ function Login() {
           <label>
             PassWord: 
             <input type='password'
-              value={PassWord} onChange={(e) => setPassWord(e.target.value)} />
+              value={PassWord} onChange={(e) => setPassWord(e.target.value)} placeholder='**************' />
           </label>
           <br />
           <br />

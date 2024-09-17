@@ -91,20 +91,19 @@ function TodoPage() {
           <input className='search-item' type="text" value={searchTerm} onChange={handleSearchChange} placeholder='Search tasks' />
           <img src={search_icon} alt="icon" className='search-icon'/>
         </div>
-        {/* <h1>Todo Page</h1> */}
+        
         <form className='todo-form'>
           <label>
-            {/* Title: */}
             <input type="text" value={newTask.title} onChange={(event) => setNewTask({ ...newTask, title: event.target.value })} placeholder='Add Title'/>
           </label>
           <br />
           <label>
-            {/* Description: */}
+        
             <input type="text" value={newTask.description} onChange={(event) => setNewTask({ ...newTask, description: event.target.value })} placeholder='Add Description' />
           </label>
           <br />
           <label>
-            {/* Priority: */}
+            
             <select value={newTask.priority} onChange={handlePriorityChange}>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>

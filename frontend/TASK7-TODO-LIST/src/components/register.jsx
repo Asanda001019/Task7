@@ -36,6 +36,7 @@ function Register() {
 
   return (
     <div className='login-container'>
+      
       <form className='register-form' onSubmit={handleSubmit}>
         <h1 className='heading'>Please Register</h1>
 
@@ -70,7 +71,7 @@ function Register() {
         <label>
           PassWord: 
           <input type='password'
-            value={password} onChange={(e) => setPassword(e.target.value)} />
+            value={password} onChange={(e) => setPassword(e.target.value)} placeholder='**************'/>
         </label>
         <br />
 
