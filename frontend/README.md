@@ -23,7 +23,15 @@ npm install axios
  npm install cors
  npm install morgan
  npm install better sqlite3
-
+````
+Start the react server
+```bash
+npm run dev
+nodemon server.js
+```
+## Tech Stack
+**Client:** React JS, HTML5, JavaScript, CSS3
+**Server:** Express ,sqlite3 ,cors
 
 
 
