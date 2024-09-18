@@ -91,7 +91,7 @@
 .task-card {
   margin: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
   width: 250px;
   background-color: white;

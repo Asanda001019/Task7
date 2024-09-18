@@ -24,7 +24,8 @@ function Login() {
         });
 
         if (response.status === 200) {
-          // Login successful, navigate to the todo page
+          // Login successful, show alert and navigate to the todo page
+          window.alert('Login successful! Welcome!');
           navigate("/todo");
         } else {
           setError(response.data.error || 'An error occurred');
@@ -49,7 +50,7 @@ function Login() {
               value={UserName} onChange={(e) => setUserName(e.target.value)} placeholder='Username' />
           </label>
           <br />
-          <br />
+          <br />                                    
 
           <label>
             PassWord: 
