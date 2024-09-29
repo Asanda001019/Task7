@@ -17,16 +17,13 @@ Go to the project directory
 ```
 Install dependencies
 ```bash
-npm install axios
- npm install express
- npm install cors
- npm install morgan
- npm install better sqlite3
- npm install nodemon
+npm install
 ```
-Start the react server
+Start the react server (frontend)
 ```bash
 npm run dev
+
+Run sqlite (backend)
 nodemon server.js
 ```
 ## Tech Stack
